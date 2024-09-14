@@ -1,0 +1,14 @@
+site_name: Linkboy
+site_url: http://www.pixelrespawn.com
+theme:
+  name: material
+  logo: images/linkboy-icon.png
+  palette:
+    primary: custom
+
+copyright: Copyright &copy; 2024 Pixel Respawn LLC
+extra:
+  generator: false
+
+extra_css:
+  - stylesheets/extra.css
