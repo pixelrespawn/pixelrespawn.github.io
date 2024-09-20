@@ -7,8 +7,6 @@ theme:
     primary: custom
 
 copyright: Copyright &copy; 2024 Pixel Respawn LLC
-extra:
-  generator: false
 
 extra_css:
   - stylesheets/extra.css
