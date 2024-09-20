@@ -1,5 +1,10 @@
 site_name: Linking Boy
 site_url: https://www.pixelrespawn.com
+
+nav:
+  - index.md
+  - contact.md
+
 theme:
   name: material
   logo: images/linkboy-icon.png
