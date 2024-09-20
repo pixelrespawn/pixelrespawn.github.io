@@ -3,6 +3,7 @@ site_url: https://www.pixelrespawn.com
 
 nav:
   - index.md
+  - privacy_policy.md
   - contact.md
 
 theme:
