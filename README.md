@@ -1,1 +1,1 @@
-This is the website for the GBA emulator, Linkboy
+This is the website for Linking Boy, the GBA emulator on iOS.
