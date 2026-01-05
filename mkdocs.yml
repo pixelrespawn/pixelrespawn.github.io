@@ -16,7 +16,7 @@ markdown_extensions:
 theme:
   name: material
   logo: images/linkboy-icon.svg
-  favicon: assets/favicon.png
+  favicon: images/favicon.png
   palette:
     - media: "(prefers-color-scheme)"
       toggle:
