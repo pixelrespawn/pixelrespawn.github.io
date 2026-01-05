@@ -15,9 +15,27 @@ markdown_extensions:
 
 theme:
   name: material
-  logo: images/linkboy-icon.png
+  logo: images/linkboy-icon.svg
+  favicon: assets/favicon.png
   palette:
-    primary: custom
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/theme-light-dark
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/white-balance-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-3
+        name: Switch to system preference
 
 copyright: Copyright &copy; 2024-2025 Pixel Respawn LLC
 
