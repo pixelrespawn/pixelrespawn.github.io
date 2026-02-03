@@ -2,7 +2,7 @@
 
 **Effective date:** [09/03/2025]
 
-Linkboy (“the App”) is a Game Boy Advance emulator. We respect your privacy and are committed to being transparent about how we handle your information.
+**Linkboy** (“the App”), also known as **Linking Boy** on iOS, is a Game Boy Advance emulator. We respect your privacy and are committed to being transparent about how we handle your information.
 
 ---
 
@@ -41,11 +41,6 @@ Linkboy is **not specifically directed to children under 13**.
 - The App may be used by people of all ages, but we recommend parental guidance for younger users.
 - We do **not knowingly collect personal information from children under 13**.
 - Features that involve signing into RetroAchievements or syncing with Google Drive require an account, which should be managed by a parent or guardian if used by a child under 13.
-
----
-
-## iOS Version (Linking Boy)
-The iOS version of the App, known as **Linking Boy**, does **not** collect or share any personal data.
 
 ---
 
