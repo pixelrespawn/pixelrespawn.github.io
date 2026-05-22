@@ -47,8 +47,8 @@ Linkboy can display thumbnails next to game names, making your library easier to
 You can set a custom thumbnail for any game directly from the app:
 
 1. **From the Game Library**
-   Tap a game’s thumbnail icon, then select **Choose thumbnail** from the popup menu.
-   You can pick an image file from your device to use as the new thumbnail.
+   Long-press a game and tap **Choose thumbnail** from the top-right menu.
+   Then choose an image from your device to use as the game's thumbnail.
 
 2. **From the Recents screen**
    Long-press a recently played game, then select **Set as thumbnail** from the popup menu.
