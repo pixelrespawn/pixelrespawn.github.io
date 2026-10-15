@@ -6,6 +6,10 @@ nav:
   - import-saves.md
   - game-thumbnails.md
   - rom-patching.md
+  - Controller Skins:
+    - using-skins.md
+    - skin-spec.md
+    - creating-skins.md
   - privacy-policy.md
   - contact.md
 
