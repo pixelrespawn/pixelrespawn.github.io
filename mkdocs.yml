@@ -3,7 +3,9 @@ site_url: https://www.pixelrespawn.com
 
 nav:
   - index.md
-  - using-linkboy.md
+  - import-saves.md
+  - game-thumbnails.md
+  - rom-patching.md
   - privacy-policy.md
   - contact.md
 
