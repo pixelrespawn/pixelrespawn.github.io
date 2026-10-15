@@ -27,6 +27,8 @@ The new profile appears under **Layout profiles** and is automatically selected.
 
 You can use the profile as it is or edit its layout anytime—for example, to move or resize controls, adjust the game screen, or add buttons.
 
+When a full skin is updated, its updated layouts are not applied to existing profiles you have edited—for example, by adding buttons. To use the updated layout, create a new profile from the updated skin.
+
 ## Control skins
 
 Control skins change the control images used by your active layout profile while keeping its layout.
