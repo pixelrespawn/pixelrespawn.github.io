@@ -4,7 +4,7 @@ This reference describes the file structure and JSON format used to create contr
 
 ## Package format
 
-A Linkboy skin package is a ZIP archive with a filename ending in `.lbskin`. The archive must contain `info.json` at its root. See the [Classic purple example](downloads/classic_purple.lbskin).
+A Linkboy skin package is a ZIP archive with a filename ending in `.lbskin`. The archive must contain `info.json` at its root.
 
 Any file referenced in `info.json` or a layout JSON file can use a path relative to the **archive root**. For example, you can place layout files in `layouts/` and background or overlay images in `images/`, then reference them as `layouts/portrait.json` and `images/background.png`. Paths are always relative to the archive root, even when the referring layout file is in a subdirectory.
 
@@ -26,15 +26,16 @@ Use valid JSON with quoted property names and no comments or trailing commas. Ma
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | String | Yes | Unique skin identifier, for example `com.example.skins.classic_purple` |
+| `id` | String | Yes | Unique skin identifier, for example `com.example.skins.my_skin` |
 | `name` | String | Yes | Display name shown to users |
+| `author` | String | No | Creator's name |
 | `layouts` | Array of layout entries | No | Defaults to `[]` |
 
 ### Skin identifier
 
 The skin ID must start with a letter or digit and may contain only ASCII letters (`A–Z`, `a–z`), digits (`0–9`), dots (`.`), underscores (`_`), and hyphens (`-`).
 
-We recommend a fully qualified reverse-domain-style identifier, such as `com.example.skins.classic_purple`, to help avoid conflicts with other skins. Keep the identifier stable when updating the same skin.
+We recommend a fully qualified reverse-domain-style identifier, such as `com.example.skins.my_skin`, to help avoid conflicts with other skins. Keep the identifier stable when updating the same skin.
 
 ### Layout entries
 
@@ -50,6 +51,7 @@ Each layout entry contains:
 {
   "id": "linkboy.skins.classic_purple",
   "name": "Classic purple",
+  "author": "Pixel Respawn",
   "layouts": [
     { "width": 1080, "height": 2400, "file": "layout-1080x2400.json" },
     { "width": 2400, "height": 1080, "file": "layout-2400x1080.json" }
@@ -61,12 +63,15 @@ The `width` and `height` define a **virtual canvas**. All coordinates and sizes 
 
 Linkboy chooses the best layout according to the screen’s aspect ratio and resolution. When two layouts have very close aspect ratios, it chooses the layout whose canvas size is closest to the screen resolution.
 
+If the chosen layout’s virtual canvas size differs from the screen size, Linkboy scales the layout to fit the screen while preserving its aspect ratio, then centers it on the screen.
+
 A control skin can omit `layouts`:
 
 ```json
 {
   "id": "com.example.skins.my_controls",
-  "name": "My controls"
+  "name": "My controls",
+  "author": "Example Studio"
 }
 ```
 
@@ -191,7 +196,7 @@ Both `backgrounds` and `overlays` contain image objects:
 
 ### Example layout
 
-This abbreviated example illustrates the structure. Use the downloadable Classic purple skin for complete layouts with all console controls.
+This abbreviated example illustrates the structure. The Classic purple skin includes complete layouts with all console controls.
 
 ```json
 {

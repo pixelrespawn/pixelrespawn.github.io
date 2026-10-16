@@ -1,67 +1,88 @@
 # Creating skins
 
-Start with an existing skin, customize its artwork and layouts, then package it for use in Linkboy. For detailed file formats and rules, see the [skin specification](skin-spec.md).
+Follow these steps to create a controller skin for Linkboy. The [skin specification](skin-spec.md) describes the file formats and available options in detail.
 
-## Start with an example
+## 1. Choose a skin type
 
-[Download Classic purple](downloads/classic_purple.lbskin){ .md-button download="classic_purple.lbskin" }
+Decide what you want to customize:
 
-Extract the `.lbskin` package into a folder to use it as a starting point. If your archive tool does not recognize the extension, rename a copy from `.lbskin` to `.zip` before extracting it.
+- **Control skin:** changes the appearance of controls while using an existing layout profile.
+- **Full skin:** includes layouts that position the game screen, controls, and any background or overlay artwork.
 
-The example contains PNG images and eight layouts for different portrait and landscape screen shapes.
+Create a folder to hold your skin’s files.
 
-## 1. Name your skin
+## 2. Create info.json
 
-Edit `info.json` and give your skin a unique `id` and a display `name`. For example, change these two fields to:
-
-```json
-"id": "com.example.my_skin",
-"name": "My skin"
-```
-
-Keep the identifier stable when updating the same skin. See [Skin identifier](skin-spec.md#skin-identifier) for the naming rules.
-
-If you are making a control skin, remove the `layouts` entry and any unused layout and background files from your working folder.
-
-## 2. Prepare the artwork
-
-Create or edit your artwork as PNG images. Use transparency around controls where appropriate. Keep PNG file sizes as small as possible, as larger files take longer to load.
-
-Replace the example’s images with your own artwork. Use the [control image naming reference](skin-spec.md#control-images) when adding or replacing button and D-pad images.
-
-For backgrounds and overlays, update the image paths in your layout files to point to your artwork. See [Background and overlay images](skin-spec.md#background-and-overlay-images) for placement and drawing order.
-
-## 3. Adjust the layouts
-
-Skip this step for a control skin.
-
-For a full skin, edit the layout files to position the game screens and touch controls over your artwork. Start with the example layout closest to your intended screen shape, then adapt the others as needed.
-
-For example, this places an A button in the layout:
+Create a file named `info.json` in your skin folder with a unique ID and a display name. You can also include your name in the optional `author` field:
 
 ```json
 {
-  "input": { "key": "A" },
-  "frame": { "x": 878, "y": 1688, "width": 164, "height": 164 }
+  "id": "com.example.my_skin",
+  "name": "My skin",
+  "author": "Your name"
 }
 ```
 
-If your background or overlay already includes the button artwork, set the corresponding control’s `alpha` to `0`. Its touch area remains active while its separate image is hidden.
+Choose an ID following the [skin identifier rules](skin-spec.md#skin-identifier), and keep it unchanged when updating the same skin. For a full skin, you will add layout entries in step 4.
 
-Update the `layouts` entries in `info.json` to match the layout files you include. See [Layout entries](skin-spec.md#layout-entries) for virtual canvas dimensions and layout selection, and [Layout files](skin-spec.md#layout-files) for the available fields.
+## 3. Prepare your images
 
-## 4. Package your skin
+Create your artwork as PNG images. Use transparency where appropriate, and keep PNG file sizes as small as possible—larger files take longer to load.
 
-1. Gather `info.json` and the layouts and images your skin uses in a staging folder, keeping any referenced subdirectories.
-2. Check that all referenced file paths match the packaged files, following the [package format](skin-spec.md#package-format).
-3. ZIP the **contents** of the folder so `info.json` is at the archive root. Do not ZIP the enclosing folder itself.
-4. Rename the resulting archive from `.zip` to `.lbskin`.
+Name button and D-pad images according to the [control image naming rules](skin-spec.md#control-images). For example, use `A.png` for the A button and optionally `A_pressed.png` for its pressed state.
 
-## 5. Test and share
+For a full skin, you can also create backgrounds and overlays. Choose their filenames yourself; you will reference them in the layout files. See [Background and overlay images](skin-spec.md#background-and-overlay-images) for how these images are positioned and layered.
 
-[Install your skin](using-skins.md#install-a-skin) in Linkboy. For a full skin, create a layout profile from it to test your layouts. For a control skin, apply it to a profile that was not created from a full skin.
+## 4. Create your layouts
 
+**Skip this step for a control skin.**
+
+Choose a virtual canvas size for each layout you want to provide, such as 1080 × 2400 for a portrait layout. Create a JSON file that defines both game screen rectangles (`gbaScreen` and `gbcScreen`), your controls, and any background or overlay images.
+
+Use the [example layout](skin-spec.md#example-layout) as a starting point, and see [Layout files](skin-spec.md#layout-files) for the available fields.
+
+If the controls are drawn into your background or overlay image, set each control’s `frame` to match the position and size of its drawing. Set its `alpha` to `0` so only the artwork is visible, while the control remains touchable.
+
+Add your layout files to `info.json`, including each file’s virtual canvas dimensions:
+
+```json
+{
+  "id": "com.example.my_skin",
+  "name": "My skin",
+  "author": "Your name",
+  "layouts": [
+    {
+      "width": 1080,
+      "height": 2400,
+      "file": "portrait.json"
+    },
+    {
+      "width": 2400,
+      "height": 1080,
+      "file": "landscape.json"
+    }
+  ]
+}
+```
+
+Include only the layouts you have created. See [Layout entries](skin-spec.md#layout-entries) for how Linkboy selects and scales layouts for different screens.
+
+## 5. Package your skin
+
+Check that all referenced layouts and images are present in your skin folder. File paths are relative to this folder, which will become the archive root.
+
+ZIP the **contents** of the folder so `info.json` is at the archive root, then rename the archive from `.zip` to `.lbskin`. See [Package format](skin-spec.md#package-format) for details.
+
+## 6. Try it in Linkboy
+
+[Install your skin](using-skins.md#install-a-skin) in Linkboy. For a full skin, create a layout profile from it. For a control skin, apply it to a profile that was not created from a full skin.
+
+Try the skin in a game and adjust your artwork or layouts as needed. When testing updated full-skin layouts, create a new profile if you have edited the previous one.
+
+## 7. Share your skin
 
 Share the finished `.lbskin` file with users. Include a screenshot and a description of the layouts you designed it for.
 
-Want to share your skin? Contact us to have it hosted on our website.
+Want to have your skin hosted on our website? [Contact us](contact.md).
+
+For a complete skin to study, download **Classic purple** from the [skin gallery](skins/index.md) and extract its `.lbskin` package. If your archive tool does not recognize the extension, rename a copy to `.zip` before extracting it.

@@ -4,9 +4,7 @@ Controller skins change the appearance of Linkboy’s on-screen controller.
 
 ## Download a skin
 
-Browse the skin downloads section and download a **`.lbskin`** file to your device. Keep it as a single file; you do not need to extract it.
-
-<!-- Link to the skin downloads section when it is available. -->
+Choose a skin from the [skin gallery](skins/index.md) and save its **`.lbskin`** file to your device. **Do not extract it.**
 
 ## Install a skin
 

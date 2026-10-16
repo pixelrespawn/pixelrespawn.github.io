@@ -7,9 +7,10 @@ nav:
   - game-thumbnails.md
   - rom-patching.md
   - Controller Skins:
+    - skins/index.md
     - using-skins.md
-    - skin-spec.md
     - creating-skins.md
+    - skin-spec.md
   - privacy-policy.md
   - contact.md
 
@@ -47,3 +48,6 @@ copyright: Copyright &copy; 2024-2025 Pixel Respawn LLC
 
 extra_css:
   - stylesheets/extra.css
+
+exclude_docs:
+  /skins/*.py
