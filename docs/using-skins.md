@@ -1,6 +1,6 @@
 # Using skins
 
-Controller skins change the appearance of Linkboy’s on-screen controller.
+Controller skins change the appearance of Linkboy’s on-screen controller. This feature is available in Linkboy version **4.0.0** or later.
 
 ## Download a skin
 
