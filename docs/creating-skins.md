@@ -1,5 +1,7 @@
 # Creating skins
 
+You can download skins from the [skin gallery](skins/index.md) and extract their `.lbskin` packages for further study. If your archive tool does not recognize the extension, rename a copy to `.zip` before extracting it.
+
 Follow these steps to create a controller skin for Linkboy. The [skin specification](skin-spec.md) describes the file formats and available options in detail.
 
 ## 1. Choose a skin type
@@ -84,5 +86,3 @@ Try the skin in a game and adjust your artwork or layouts as needed. When testin
 Share the finished `.lbskin` file with users. Include a screenshot and a description of the layouts you designed it for.
 
 Want to have your skin hosted on our website? [Contact us](contact.md).
-
-For a complete skin to study, download **Classic purple** from the [skin gallery](skins/index.md) and extract its `.lbskin` package. If your archive tool does not recognize the extension, rename a copy to `.zip` before extracting it.

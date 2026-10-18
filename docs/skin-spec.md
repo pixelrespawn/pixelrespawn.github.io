@@ -49,8 +49,8 @@ Each layout entry contains:
 
 ```json
 {
-  "id": "linkboy.skins.classic_purple",
-  "name": "Classic purple",
+  "id": "com.example.my_skin",
+  "name": "My skin",
   "author": "Pixel Respawn",
   "layouts": [
     { "width": 1080, "height": 2400, "file": "layout-1080x2400.json" },
@@ -196,7 +196,7 @@ Both `backgrounds` and `overlays` contain image objects:
 
 ### Example layout
 
-This abbreviated example illustrates the structure. The Classic purple skin includes complete layouts with all console controls.
+This abbreviated example illustrates the structure.
 
 ```json
 {
