@@ -26,4 +26,11 @@ jobs:
           restore-keys: |
             mkdocs-material-
       - run: pip install mkdocs-material 
+
+      - name: Generate skin gallery
+        run: |
+          pip install Pillow
+          python generate_skin_gallery.py
+        working-directory: docs/skins
+
       - run: mkdocs gh-deploy --force
